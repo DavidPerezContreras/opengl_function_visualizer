@@ -1,6 +1,3 @@
-Here’s the complete raw text for your `README.md` file without any snippets:
-
-```
 # 🧭 OpenGL Function Visualizer
 
 This project is a real-time OpenGL-based visualizer for mathematical functions written in C++. It renders a 2D graph of any function you define, using GLFW, GLAD, and GLM for graphics and input handling.
@@ -40,7 +37,7 @@ vcpkg install
 
 ### 🧪 How to Run
 
-It's a bit tricky to compile since you need the Visual Studio C++ workload for MSVC compiler, cmake, and vcpkg...
+It's a bit tricky to compile since you need the Visual Studio C++ workload, cmake, and vcpkg...
 I used VSCode as an IDE.
 
 I already included a compiled and bundled version ready for distribution in the dist/ folder with the function f(x)=x as an example 
@@ -87,5 +84,3 @@ This will:
 - Create a `dist/` folder with everything ready to distribute
 
 ---
-
-

@@ -45,3 +45,9 @@ elseif(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /Zi /Od /RTC1)
     target_link_options(${PROJECT_NAME} PRIVATE /DEBUG)
 endif()
+
+if (WIN32)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup"
+    )
+endif()

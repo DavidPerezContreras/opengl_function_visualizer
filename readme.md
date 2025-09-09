@@ -47,6 +47,27 @@ vcpkg install
 It's a bit tricky to compile since you need the Visual Studio C++ workload, cmake, and vcpkg...
 I used VSCode as an IDE.
 
+When installing Visual Studio, make sure to select:
+
+✔️ Desktop development with C++
+
+This workload includes:
+
+    MSVC compiler
+
+    CMake integration
+
+    Windows SDK
+
+    Debugging tools
+
+    Standard C++ libraries
+
+Without this workload, Visual Studio won’t be able to compile C++ code or run CMake-based projects properly.
+
+ADD your vcpkg folder and C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin to your PATH environment variable
+
+
 Build the project in Release mode:
 ```bash
 cmake --build build --config Release

@@ -14,6 +14,13 @@ This project is a real-time OpenGL-based visualizer for mathematical functions w
 
 ### 🚀 Getting Started
 
+
+
+I already included a compiled and bundled version ready for distribution in the dist/ folder with the function f(x)=x as an example 
+```PS1
+.\dist\hello_world.exe
+```
+
 #### Prerequisites
 
 - CMake
@@ -39,9 +46,6 @@ vcpkg install
 
 It's a bit tricky to compile since you need the Visual Studio C++ workload, cmake, and vcpkg...
 I used VSCode as an IDE.
-
-I already included a compiled and bundled version ready for distribution in the dist/ folder with the function f(x)=x as an example 
-
 
 Build the project in Release mode:
 ```bash

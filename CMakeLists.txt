@@ -51,3 +51,12 @@ if (WIN32)
         LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup"
     )
 endif()
+
+
+
+
+# Copy shader files to build directory
+foreach(SHADER_FILE ${SHADERS})
+    get_filename_component(SHADER_NAME ${SHADER_FILE} NAME)
+    configure_file(${SHADER_FILE} ${CMAKE_CURRENT_BINARY_DIR}/shaders/${SHADER_NAME} COPYONLY)
+endforeach()

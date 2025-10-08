@@ -5,10 +5,16 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
-#include <corecrt_math_defines.h>
+#include <cmath>
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
 #include <functional>
 
 #include "utils/FileLoader.h"
+#include <filesystem>
 
 void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 
@@ -35,12 +41,11 @@ std::vector<float> generateVertices(Function func, int resolution, float xMin, f
 
 int main()
 {
-
-    // Define the function to visualize
-    Function myFunction = [](float x)
-    {
-        return x; // Try changing this!
-    };
+printf("Program started2");
+Function myFunction = [](float x)
+{
+    return std::sin(M_PI * x *5);
+};
 
     // Generate vertex data
     int resolution = 1000;
@@ -70,6 +75,9 @@ int main()
         return -1;
     }
 
+    //cd
+    std::filesystem::path cwd = std::filesystem::current_path();
+    std::cout << "Current working directory: " << cwd << std::endl;
     // Load shaders
     // TODO: In linux paths start with ../ instead of ./
     const std::string vertexShaderSource = utils::FileLoader::LoadTextFile("./shaders/vert.glsl");

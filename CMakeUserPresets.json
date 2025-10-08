@@ -1,11 +1,17 @@
 {
-  "version": 2,
+  "version": 3,
   "configurePresets": [
     {
       "name": "default",
-      "inherits": "vcpkg",
+      "displayName": "Default Linux Build",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/linux",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      },
       "environment": {
-        "VCPKG_ROOT": "C:/vcpkg"
+        "VCPKG_ROOT": "/home/ciber/vcpkg"
       }
     }
   ]

@@ -1,13 +1,32 @@
 {
-  "version": 2,
+  "version": 3,
   "configurePresets": [
     {
-      "name": "vcpkg",
+      "name": "vcpkg-windows",
+      "displayName": "Windows Build with VCPKG",
+      "description": "Uses Visual Studio and VCPKG with x64-windows triplet",
       "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/build",
+      "binaryDir": "${sourceDir}/build/windows",
       "cacheVariables": {
         "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
         "VCPKG_TARGET_TRIPLET": "x64-windows"
+      },
+      "environment": {
+        "VCPKG_ROOT": "C:/vcpkg"
+      }
+    },
+    {
+      "name": "vcpkg-linux",
+      "displayName": "Linux Build with VCPKG",
+      "description": "Uses Ninja and VCPKG with x64-linux triplet",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/linux",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      },
+      "environment": {
+        "VCPKG_ROOT": "/home/ciber/vcpkg"
       }
     }
   ]

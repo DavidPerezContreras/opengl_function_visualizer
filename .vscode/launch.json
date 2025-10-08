@@ -2,14 +2,35 @@
   "version": "2.0.0",
   "configurations": [
     {
-      "name": "Debug with MSVC",
+      "name": "Debug with MSVC (Windows)",
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${command:cmake.launchTargetPath}",
-      "args": [""],
+      "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "console": "integratedTerminal"
+      "console": "integratedTerminal",
+      "condition": "win32"
+    },
+    {
+      "name": "Debug with GDB (Linux)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/linux/hello_world",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/build/linux",
+      "console": "integratedTerminal",
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "condition": "linux"
     }
-  ],
+  ]
 }
